@@ -1,0 +1,33 @@
+Step 1:Prepare the LAMP Server
+	1.Connect to your instance
+	
+	2.Update the packages
+	$sudo yum update -y
+	
+	3.Install the Apache Web server
+	$sudo yum install -y httpd wget php-fpm php-mysqli php-json php php-devel 
+	
+	4.Install MariaDB(Database) software package
+	$sudo dnf install mariadb105-server
+	
+	- Check the current versions of the packages
+	$yum info "package_name"
+	(Replace the package_name)
+
+	5.Start the Apache web server
+	$sudo systemctl start httpd
+
+	6.Enable Apache at boot 
+	$sudo systemctl enable httpd
+
+	- Verify the httpd is running
+	$sudo systemctl is-enabled httpd
+
+	7. Add another rule to your security group for inbound web traffic
+	- Go to EC2 Dashboard > Security Groups:
+	- Type:HTTP Protocol:TCP Port Range:80 Source:Custom
+
+	8. Test the web server
+	- copy and paste the public DNS/ public IP address of the server
+
+   
