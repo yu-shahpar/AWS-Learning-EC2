@@ -8,7 +8,15 @@ Step 1:Prepare the LAMP Server
 	$sudo yum install -y httpd wget php-fpm php-mysqli php-json php php-devel 
 	
 	4.Install MariaDB(Database) software package
-	$sudo dnf install mariadb105-server
+
+	- Install the EPEL relaease package
+	$sudo amazon-linux-extras install epel -y
+
+	- Enable the EPEL repository
+	$sudo yum-config-manager --enable epel
+
+	- Install MariaDB using yum package manager
+	$sudo yum install mariadb105-server
 	
 	- Check the current versions of the packages
 	$yum info "package_name"
